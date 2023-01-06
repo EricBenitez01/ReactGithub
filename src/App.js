@@ -1,24 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {useState, useEffect} from 'react'
+import UserList from './components/UserList';
+import {BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import UserDetail from './components/UserDetail'
 
-function App() {
+function App() {  
+  const [users, setUsers] = useState([]);
+  const REACT_APP_URL = "http://localhost:3000/users/page/1";
+  
+
+  useEffect( () => {
+    infoLoaded()
+  }, [])
+  
+async function infoLoaded(){
+    
+    try {
+      const res = await fetch(`${REACT_APP_URL}`);
+      const respuesta = await res.json();
+      setUsers(respuesta)
+
+    } catch (error) {
+      console.log(error);
+    }
+
+  }
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  
+    <Router>
+      <Routes> 
+        < >
+          
+          
+          <Route  path="/" element={<UserList users={users}/>}  />
+          <Route  path="/detail/:id" element={<UserDetail/>}  />
+
+          
+        </>
+      </Routes>
+    </Router>
   );
 }
 
