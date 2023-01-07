@@ -36,7 +36,7 @@ async function infoUser(){
 async function repositoris(){
     
     try {
-      const res = await fetch(`http://localhost:3000/users/detail/${detailName}/repos`);
+      const res = await fetch(`https://apigithubs.onrender.com/users/detail/${detailName}/repos`);
       const respuesta = await res.json();
       console.log(respuesta);
       setRepos(respuesta)
