@@ -9,7 +9,7 @@ const UserDetail = () => {
   const {id} = useParams();
   const detailName = id
   
-  const REACT_APP_URL = `http://localhost:3000/users/detail/${detailName}`;
+  const REACT_APP_URL = `https://apigithubs.onrender.com/users/detail/${detailName}`;
   
 
   useEffect( () => {
@@ -48,7 +48,7 @@ async function repositoris(){
   }
   console.log(repos)
   return( 
-  <div className='conteiner mx-auto bg-zinc-900 p-10 h-full grid h-screen place-items-center'key={detail.id}>
+  <div className='conteiner mx-auto bg-zinc-900 p-10  grid h-screen place-items-center'key={detail.id}>
     <div className='cardDetail w-70'>
       <h2>profile detail</h2>
       <p>{detail.id}</p>

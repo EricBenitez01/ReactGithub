@@ -7,7 +7,7 @@ import UserDetail from './components/UserDetail'
 function App() {  
   const [users, setUsers] = useState([]);
   const [page, setPage] = useState(3);
-  const REACT_APP_URL = `http://localhost:3000/users/page`;
+  const REACT_APP_URL = `https://apigithubs.onrender.com/users/page`;
   
 
   useEffect( () => {
