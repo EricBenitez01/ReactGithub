@@ -8,15 +8,13 @@ function UserList({users}) {
         return  <h1 className='text-white text-4xl font-bolt text-center'>Cargando</h1> 
     } else {
         return (
-        <div className='conteiner mx-auto p-10'>
-          
-            <div className='grid grid-cols-5 gap-2 p-4  ' >
-                <p>Hola users</p>
+        <div className='conteiner mx-auto bg-zinc-900 p-10'>          
+            <div className='grid grid-cols-5 gap-2 p-4 '>
                 {users.map((user) => 
                 <Link to={`/detail/${user.login}`}>
                     <CardUser key={user.id}  user={user} />
                 </Link>
-            )}
+                )}
             </div>
         </div>
   )}
