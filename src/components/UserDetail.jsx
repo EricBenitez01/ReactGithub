@@ -48,13 +48,13 @@ async function repositoris(){
   }
   console.log(repos)
   return( 
-  <div className='conteiner mx-auto bg-zinc-900 p-10  grid h-screen place-items-center'key={detail.id}>
-    <div className='cardDetail w-70'>
-      <h2>profile detail</h2>
-      <p>{detail.id}</p>
-      <p>{detail.login}</p>
-      <p>{detail.url}</p>
-      <p>{detail.created_at}</p>
+  <div className='conteiner mx-auto bg-zinc-900 p-10  grid h-full place-items-center'key={detail.id}>
+    <h2 className='text-white text-4xl font-bolt text-center p-5'>profile detail</h2>
+    <div className='cardDetail w-70 text-white rounded-lg  text-justify break-words mb-5'>     
+      <p>ID: {detail.id}</p>
+      <p>Name: {detail.login}</p>
+      <p>UTL to GitHub: {detail.url}</p>
+      <p>Date of the login creation{detail.created_at}</p>
     </div>
     <div>   
     <h2 className='text-xl font-bolt capitalize' >REPOSITORY </h2>       

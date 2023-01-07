@@ -4,6 +4,7 @@ import UserList from './components/UserList';
 import {BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import UserDetail from './components/UserDetail'
 
+
 function App() {  
   const [users, setUsers] = useState([]);
   const [page, setPage] = useState(3);
@@ -35,17 +36,14 @@ async function infoLoaded(){
   }
   
   return (
-    <div> 
-            <div onClick={nextPage}> Previous Page </div>
-            <div onClick={previousPage}> Next Page </div> 
-    
+
     <Router>
       <Routes> 
-          <Route  path="/" element={<UserList users={users}/>}  />
+          <Route  path="/" element={<UserList users={users}previousPage={ previousPage }nextPage={nextPage }/>}  />
           <Route  path="/detail/:id" element={<UserDetail/>}  />
       </Routes>
     </Router>
-    </div>
+
   );
 }
 
