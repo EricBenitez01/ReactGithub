@@ -21,13 +21,12 @@ async function infoUser(){
     try {
       const res = await fetch(`${REACT_APP_URL}`);
       const respuesta = await res.json();
-      console.log(respuesta);
       setDetail(respuesta)
 
     } catch (error) {
       console.log(error);
     }
-    console.log(detail)
+    
   }
   useEffect( () => {
     repositoris()
@@ -38,7 +37,6 @@ async function repositoris(){
     try {
       const res = await fetch(`https://apigithubs.onrender.com/users/detail/${detailName}/repos`);
       const respuesta = await res.json();
-      console.log(respuesta);
       setRepos(respuesta)
 
     } catch (error) {

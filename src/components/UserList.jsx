@@ -13,7 +13,7 @@ function UserList({users, nextPage, previousPage}) {
             <div className='grid grid-cols-5 gap-2 p-4 '>
                 
                 {users.map((user) => 
-                <Link to={`/detail/${user.login}`}>
+                <Link key={user.id} to={`/detail/${user.login}`}>
                     <CardUser key={user.id}  user={user} />
                 </Link>
                 )}
