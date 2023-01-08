@@ -51,8 +51,8 @@ async function repositoris(){
     <div className='cardDetail w-70 text-white rounded-lg  text-justify break-words mb-5'>     
       <p>ID: {detail.id}</p>
       <p>Name: {detail.login}</p>
-      <p>UTL to GitHub: {detail.url}</p>
-      <p>Date of the login creation{detail.created_at}</p>
+      <p>GitHub: {detail.url}</p>
+      <p>Date of the login creation: {detail.created_at}</p>
     </div>
     <div>   
     <h2 className='text-xl font-bolt capitalize' >REPOSITORY </h2>       
@@ -62,7 +62,7 @@ async function repositoris(){
                 <div key={repo.id} className='bg-violet-900 text-white rounded-lg p-5 text-justify break-words'>
                 <h1 className='text-xl font-bolt capitalize ' >ID: {repo.id}</h1> 
                 <p className='text-gray-500 text-sm'>Name: {repo.name} </p>  
-                <p className='text-gray-500 text-sm'>URL:{repo.url} </p>
+                <p className='text-gray-500 text-sm'>URL: {repo.url} </p>
                   
                 </div>  
                 )}
