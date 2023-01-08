@@ -10,7 +10,7 @@ function UserList({users, nextPage, previousPage}) {
         return (
         <div className='conteiner mx-auto h-full bg-zinc-900 p-10'>          
             <h1 className='text-white text-4xl font-bolt text-center'>This are GitHub Users</h1>
-            <div className='grid grid-cols-5 gap-2 p-4 '>
+            <div className='grid grid-cols-5 gap-2 p-10 '>
                 
                 {users.map((user) => 
                 <Link key={user.id} to={`/detail/${user.login}`}>
@@ -18,7 +18,7 @@ function UserList({users, nextPage, previousPage}) {
                 </Link>
                 )}
             </div>
-            <div className='flex justify-between p-20 '>
+            <div className='flex justify-between p-10 '>
                 <button className='bg-indigo-500 px-3 py-1 text-withe hover:bg-indigo-700 rounded-md' onClick={previousPage}>Previous Page</button>
                 <button className='bg-indigo-500 px-3 py-1 text-withe hover:bg-indigo-700 rounded-md' onClick={nextPage}>  Next Page </button>
             </div>

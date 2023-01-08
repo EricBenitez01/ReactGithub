@@ -55,14 +55,14 @@ async function repositoris(){
       <p>Date of the login creation: {detail.created_at}</p>
     </div>
     <div>   
-    <h2 className='text-xl font-bolt capitalize' >REPOSITORY </h2>       
+    <h2 className='text-white text-2xl font-bolt text-center p-5' >REPOSITORY </h2>       
         <div className='grid grid-cols-5 gap-2 p-4'> 
               {repos.map((repo) => 
                  /* ID, name, and URL to the repository. */
-                <div key={repo.id} className='bg-violet-900 text-white rounded-lg p-5 text-justify break-words'>
+                <div key={repo.id} className='bg-violet-900 hover:bg-violet-500 hover:text-gray-900 text-white rounded-lg p-5  text-justify break-words'>
                 <h1 className='text-xl font-bolt capitalize ' >ID: {repo.id}</h1> 
-                <p className='text-gray-500 text-sm'>Name: {repo.name} </p>  
-                <p className='text-gray-500 text-sm'>URL: {repo.url} </p>
+                <p className=' text-sm'>Name: {repo.name} </p>  
+                <p className=' text-sm'>URL: {repo.url} </p>
                   
                 </div>  
                 )}
