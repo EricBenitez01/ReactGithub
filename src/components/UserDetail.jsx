@@ -47,7 +47,7 @@ async function repositoris(){
   console.log(repos)
   return( 
   <div className='conteiner mx-auto bg-zinc-900 p-10  grid h-full place-items-center'key={detail.id}>
-    <h2 className='text-white text-4xl font-bolt text-center p-5'>profile detail</h2>
+    <h2 className='text-white text-4xl font-bolt text-center p-5'>Profile Detail</h2>
     <div className='cardDetail w-70 text-white rounded-lg  text-justify break-words mb-5'>     
       <p>ID: {detail.id}</p>
       <p>Name: {detail.login}</p>
