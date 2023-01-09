@@ -1,9 +1,9 @@
 .cardDetail{
-    background-color: blue;
+    
     box-shadow: 10px 10px 11px 0px rgba(0,0,0,0.72);
     -webkit-box-shadow: 10px 10px 11px 0px rgba(0,0,0,0.72);
     -moz-box-shadow: 10px 10px 11px 0px rgba(0,0,0,0.72);
-    background-color: rgb(21 132 221);
+    background-color: #525264;
     padding: 40px;
     border-radius: 5px;
     box-sizing: border-box;

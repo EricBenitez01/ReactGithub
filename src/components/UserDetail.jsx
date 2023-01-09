@@ -53,7 +53,7 @@ const UserDetail = () => {
     height="900px" 
     width="500px" 
     radius="9"
-    color="#4fa94d" 
+    color="#4c51bf" 
     ariaLabel="three-dots-loading"
     wrapperStyle={{}}
     wrapperClassName=""
