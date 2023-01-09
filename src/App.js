@@ -11,29 +11,31 @@ function App() {
   const REACT_APP_URL = `https://apigithubs.onrender.com/users/page`;
   
 
-  useEffect( () => {
-    infoLoaded()
-  },[page])
-  const nextPage = () => {
-    setPage(page + 1)
-}
-
-const previousPage = () => {
-  setPage(page - 1)
-}
-async function infoLoaded(){
+useEffect( () => {
+    async function infoLoaded(){
     
     try {
       const res = await fetch(`${REACT_APP_URL}/${page}`);
       const respuesta = await res.json();
       setUsers(respuesta)
-      console.log(respuesta);
+      
 
     } catch (error) {
       console.log(error);
     }
 
   }
+  infoLoaded()
+},[page, REACT_APP_URL])
+
+const nextPage =() =>{
+    setPage(page + 1);
+  }
+
+const previousPage = () => {
+  setPage(page - 1)
+}
+
   
   return (
 

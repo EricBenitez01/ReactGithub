@@ -13,45 +13,43 @@ const UserDetail = () => {
   
 
   useEffect( () => {
+    async function infoUser(){
+    
+      try {
+        const res = await fetch(`${REACT_APP_URL}`);
+        const respuesta = await res.json();
+        setDetail(respuesta)
+  
+      } catch (error) {
+        console.log(error);
+      }
+      
+    }
     infoUser()
-  }, [])
+    async function repositoris(){
+      
+      try {
+        const res = await fetch(`https://apigithubs.onrender.com/users/detail/${detailName}/repos`);
+        const respuesta = await res.json();
+        setRepos(respuesta)
   
-async function infoUser(){
-    
-    try {
-      const res = await fetch(`${REACT_APP_URL}`);
-      const respuesta = await res.json();
-      setDetail(respuesta)
-
-    } catch (error) {
-      console.log(error);
+      } catch (error) {
+        console.log(error);
+      }
+      
     }
-    
-  }
-  useEffect( () => {
     repositoris()
-  }, [])
+    
+  }, [REACT_APP_URL, detailName])
   
-async function repositoris(){
-    
-    try {
-      const res = await fetch(`https://apigithubs.onrender.com/users/detail/${detailName}/repos`);
-      const respuesta = await res.json();
-      setRepos(respuesta)
 
-    } catch (error) {
-      console.log(error);
-    }
-    
-  }
-  console.log(repos)
   return( 
   <div className='conteiner mx-auto bg-zinc-900 p-10  grid h-full place-items-center'key={detail.id}>
     <h2 className='text-white text-4xl font-bolt text-center p-5'>Profile Detail</h2>
     <div className='cardDetail w-70 text-white rounded-lg  text-justify break-words mb-5'>     
       <p>ID: {detail.id}</p>
       <p>Name: {detail.login}</p>
-      <p>GitHub: {detail.url}</p>
+      <p>GitHub: {detail.html_url}</p>
       <p>Date of the login creation: {detail.created_at}</p>
     </div>
     <div>   
@@ -62,7 +60,7 @@ async function repositoris(){
                 <div key={repo.id} className='bg-violet-900 hover:bg-violet-500 hover:text-gray-900 text-white rounded-lg p-5  text-justify break-words'>
                 <h1 className='text-xl font-bolt capitalize ' >ID: {repo.id}</h1> 
                 <p className=' text-sm'>Name: {repo.name} </p>  
-                <p className=' text-sm'>URL: {repo.url} </p>
+                <p className=' text-sm'>URL: {repo.html_url} </p>
                   
                 </div>  
                 )}
