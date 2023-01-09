@@ -1,11 +1,20 @@
 import React from 'react'
 import CardUser from './CardUser'
 import { Link } from 'react-router-dom';
+import { ThreeDots } from  'react-loader-spinner'
 
-function UserList({users, nextPage, previousPage}) {
-    console.log(users);
-    if (users.length ===  0){
-        return  <h1 className='text-white text-4xl font-bolt text-center'>loading</h1> 
+function UserList({users, nextPage, previousPage,loading}) {
+    if (loading){
+        return <div className='conteiner mx-auto bg-zinc-900 p-10 grid  h-full place-items-center'> <ThreeDots 
+        height="900px" 
+        width="500px" 
+        radius="9"
+        color="#4fa94d" 
+        ariaLabel="three-dots-loading"
+        wrapperStyle={{}}
+        wrapperClassName=""
+        visible={true}
+         />  </div>
     } else {
         return (
         <div className='conteiner mx-auto h-full bg-zinc-900 p-10'>          
@@ -29,3 +38,4 @@ function UserList({users, nextPage, previousPage}) {
 
 export default UserList;
 
+/* <h1 className='text-white text-4xl font-bolt text-center'>loading</h1> */ 

@@ -8,6 +8,7 @@ import UserDetail from './components/UserDetail'
 function App() {  
   const [users, setUsers] = useState([]);
   const [page, setPage] = useState(3);
+  const [loading, setLoading] = useState(true);
   const REACT_APP_URL = `https://apigithubs.onrender.com/users/page`;
   
 
@@ -17,9 +18,10 @@ useEffect( () => {
     try {
       const res = await fetch(`${REACT_APP_URL}/${page}`);
       const respuesta = await res.json();
+      setTimeout(() => {
+        setLoading(false)
+      }, 2500)
       setUsers(respuesta)
-      
-
     } catch (error) {
       console.log(error);
     }
@@ -41,7 +43,7 @@ const previousPage = () => {
 
     <Router>
       <Routes> 
-          <Route  path="/" element={<UserList users={users}previousPage={ previousPage }nextPage={nextPage }/>}  />
+          <Route  path="/" element={<UserList users={users}previousPage={ previousPage }nextPage={nextPage } loading={loading} />}  />
           <Route  path="/detail/:id" element={<UserDetail/>}  />
       </Routes>
     </Router>
